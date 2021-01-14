@@ -26,10 +26,10 @@ def createFolderTest():
     createFolder(app.config['UPLOAD_FOLDER'] + folderName)
     
     return "Create " + folderName + " File!!"
+    
 @app.route("/folder", methods=['DELETE'])
 def delecteFolder():
     filename = request.form.get('filename') #json 데이터를 받아옴
-    
 
     shutil.rmtree(app.config['UPLOAD_FOLDER'] + filename) #하위 파일까지 삭제
     return "Delecte " + filename + " File!!"
